@@ -1,0 +1,15 @@
+{
+  "random_seed": 42,
+  "val_size": 0.2,
+  "train_rows": 8002,
+  "val_rows": 2001,
+  "test_rows": 3080,
+  "verification_passed": true,
+  "classes_in_train": 77,
+  "classes_in_val": 77,
+  "max_prop_diff_train": 7.4e-05,
+  "max_prop_diff_val": 0.000296,
+  "index_overlap_count": 0,
+  "text_overlap_count": 0,
+  "test_untouched": true
+}
