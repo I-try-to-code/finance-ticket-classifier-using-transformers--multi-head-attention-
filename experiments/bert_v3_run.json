@@ -1,0 +1,343 @@
+{
+  "experiment_name": "bert_v3_finetuning",
+  "timestamp": "2026-09-11T12:32:56Z",
+  "dataset_info": {
+    "dataset_name": "banking77",
+    "train_samples": 8002,
+    "val_samples": 2001,
+    "test_samples_untouched": 3080,
+    "num_classes": 77
+  },
+  "hyperparameters": {
+    "model_name": "bert-base-uncased",
+    "num_labels": 77,
+    "max_length": 128,
+    "learning_rate": 3e-05,
+    "batch_size": 16,
+    "epochs": 4,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "seed": 42,
+    "fp16": true
+  },
+  "training_summary": {
+    "total_training_duration_seconds": 807.4894,
+    "best_epoch": 4,
+    "best_macro_f1": 0.8951,
+    "device": "cuda",
+    "num_parameters": 109541453,
+    "peak_vram_mb": 2140.9,
+    "memory_adjustments_needed": "None (batch size 16 FP16 fits within 4GB VRAM)"
+  },
+  "validation_metrics": {
+    "macro_f1": 0.8951,
+    "weighted_f1": 0.9001,
+    "accuracy": 0.9,
+    "best_10_intents": [
+      {
+        "class_id": 8,
+        "intent_name": "cancel_transfer",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 31
+      },
+      {
+        "class_id": 71,
+        "intent_name": "verify_top_up",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 25
+      },
+      {
+        "class_id": 60,
+        "intent_name": "top_up_limits",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 19
+      },
+      {
+        "class_id": 39,
+        "intent_name": "getting_spare_card",
+        "precision": 1.0,
+        "recall": 0.9615,
+        "f1": 0.9804,
+        "support": 26
+      },
+      {
+        "class_id": 2,
+        "intent_name": "apple_pay_or_google_pay",
+        "precision": 0.9615,
+        "recall": 1.0,
+        "f1": 0.9804,
+        "support": 25
+      },
+      {
+        "class_id": 21,
+        "intent_name": "change_pin",
+        "precision": 1.0,
+        "recall": 0.9583,
+        "f1": 0.9787,
+        "support": 24
+      },
+      {
+        "class_id": 30,
+        "intent_name": "edit_personal_details",
+        "precision": 1.0,
+        "recall": 0.9583,
+        "f1": 0.9787,
+        "support": 24
+      },
+      {
+        "class_id": 1,
+        "intent_name": "age_limit",
+        "precision": 1.0,
+        "recall": 0.9545,
+        "f1": 0.9767,
+        "support": 22
+      },
+      {
+        "class_id": 38,
+        "intent_name": "get_physical_card",
+        "precision": 0.9545,
+        "recall": 1.0,
+        "f1": 0.9767,
+        "support": 21
+      },
+      {
+        "class_id": 44,
+        "intent_name": "passcode_forgotten",
+        "precision": 0.9545,
+        "recall": 1.0,
+        "f1": 0.9767,
+        "support": 21
+      }
+    ],
+    "worst_10_intents": [
+      {
+        "class_id": 72,
+        "intent_name": "virtual_card_not_working",
+        "precision": 0.6667,
+        "recall": 0.5,
+        "f1": 0.5714,
+        "support": 8
+      },
+      {
+        "class_id": 62,
+        "intent_name": "topping_up_by_card",
+        "precision": 0.6957,
+        "recall": 0.7619,
+        "f1": 0.7273,
+        "support": 21
+      },
+      {
+        "class_id": 23,
+        "intent_name": "contactless_not_working",
+        "precision": 1.0,
+        "recall": 0.5714,
+        "f1": 0.7273,
+        "support": 7
+      },
+      {
+        "class_id": 74,
+        "intent_name": "why_verify_identity",
+        "precision": 0.8421,
+        "recall": 0.6667,
+        "f1": 0.7442,
+        "support": 24
+      },
+      {
+        "class_id": 48,
+        "intent_name": "pending_transfer",
+        "precision": 0.8077,
+        "recall": 0.7,
+        "f1": 0.75,
+        "support": 30
+      },
+      {
+        "class_id": 5,
+        "intent_name": "balance_not_updated_after_bank_transfer",
+        "precision": 0.8571,
+        "recall": 0.7059,
+        "f1": 0.7742,
+        "support": 34
+      },
+      {
+        "class_id": 14,
+        "intent_name": "card_not_working",
+        "precision": 0.7826,
+        "recall": 0.8182,
+        "f1": 0.8,
+        "support": 22
+      },
+      {
+        "class_id": 25,
+        "intent_name": "declined_card_payment",
+        "precision": 0.7368,
+        "recall": 0.9032,
+        "f1": 0.8116,
+        "support": 31
+      },
+      {
+        "class_id": 66,
+        "intent_name": "transfer_not_received_by_recipient",
+        "precision": 0.8667,
+        "recall": 0.7647,
+        "f1": 0.8125,
+        "support": 34
+      },
+      {
+        "class_id": 59,
+        "intent_name": "top_up_failed",
+        "precision": 0.7297,
+        "recall": 0.931,
+        "f1": 0.8182,
+        "support": 29
+      }
+    ],
+    "top_10_confusions": [
+      {
+        "true_intent": "top_up_reverted",
+        "pred_intent": "top_up_failed",
+        "true_id": 61,
+        "pred_id": 59,
+        "count": 5
+      },
+      {
+        "true_intent": "balance_not_updated_after_bank_transfer",
+        "pred_intent": "transfer_timing",
+        "true_id": 5,
+        "pred_id": 67,
+        "count": 4
+      },
+      {
+        "true_intent": "card_delivery_estimate",
+        "pred_intent": "card_arrival",
+        "true_id": 12,
+        "pred_id": 11,
+        "count": 4
+      },
+      {
+        "true_intent": "direct_debit_payment_not_recognised",
+        "pred_intent": "card_payment_not_recognised",
+        "true_id": 28,
+        "pred_id": 16,
+        "count": 4
+      },
+      {
+        "true_intent": "pending_top_up",
+        "pred_intent": "top_up_failed",
+        "true_id": 47,
+        "pred_id": 59,
+        "count": 4
+      },
+      {
+        "true_intent": "pending_transfer",
+        "pred_intent": "transfer_timing",
+        "true_id": 48,
+        "pred_id": 67,
+        "count": 4
+      },
+      {
+        "true_intent": "why_verify_identity",
+        "pred_intent": "unable_to_verify_identity",
+        "true_id": 74,
+        "pred_id": 68,
+        "count": 4
+      },
+      {
+        "true_intent": "wrong_exchange_rate_for_cash_withdrawal",
+        "pred_intent": "wrong_amount_of_cash_received",
+        "true_id": 76,
+        "pred_id": 75,
+        "count": 4
+      },
+      {
+        "true_intent": "beneficiary_not_allowed",
+        "pred_intent": "failed_transfer",
+        "true_id": 7,
+        "pred_id": 35,
+        "count": 3
+      },
+      {
+        "true_intent": "declined_transfer",
+        "pred_intent": "declined_card_payment",
+        "true_id": 27,
+        "pred_id": 25,
+        "count": 3
+      }
+    ],
+    "difficult_intents": [
+      {
+        "intent_name": "virtual_card_not_working",
+        "tfidf_f1": 0.2222,
+        "distilbert_f1": 0.2222,
+        "bert_f1": 0.5714,
+        "delta_over_distilbert": 0.3492,
+        "tfidf_recall": 0.125,
+        "distilbert_recall": 0.125,
+        "bert_recall": 0.5
+      },
+      {
+        "intent_name": "why_verify_identity",
+        "tfidf_f1": 0.6957,
+        "distilbert_f1": 0.7,
+        "bert_f1": 0.7442,
+        "delta_over_distilbert": 0.0442,
+        "tfidf_recall": 0.6667,
+        "distilbert_recall": 0.5833,
+        "bert_recall": 0.6667
+      },
+      {
+        "intent_name": "exchange_rate",
+        "tfidf_f1": 0.6857,
+        "distilbert_f1": 0.9545,
+        "bert_f1": 0.9333,
+        "delta_over_distilbert": -0.0212,
+        "tfidf_recall": 0.5455,
+        "distilbert_recall": 0.9545,
+        "bert_recall": 0.9545
+      },
+      {
+        "intent_name": "card_not_working",
+        "tfidf_f1": 0.6809,
+        "distilbert_f1": 0.8182,
+        "bert_f1": 0.8,
+        "delta_over_distilbert": -0.0182,
+        "tfidf_recall": 0.7273,
+        "distilbert_recall": 0.8182,
+        "bert_recall": 0.8182
+      },
+      {
+        "intent_name": "contactless_not_working",
+        "tfidf_f1": 0.6,
+        "distilbert_f1": 0.7273,
+        "bert_f1": 0.7273,
+        "delta_over_distilbert": 0.0,
+        "tfidf_recall": 0.4286,
+        "distilbert_recall": 0.5714,
+        "bert_recall": 0.5714
+      }
+    ]
+  },
+  "three_way_comparison": {
+    "tfidf_macro_f1": 0.832,
+    "distilbert_macro_f1": 0.8907,
+    "bert_macro_f1": 0.8951,
+    "delta_over_distilbert": 0.0044,
+    "rel_gain_over_distilbert_pct": 0.5,
+    "delta_over_tfidf": 0.0631,
+    "bert_latency_ms": 53.13,
+    "distilbert_latency_ms": 31.26,
+    "tfidf_latency_ms": 4.26
+  },
+  "artifacts": {
+    "model_dir": "C:\\Users\\Ayan\\Documents\\GitHub\\AIML\\finance ticket classifier using transformers (multi head)\\models\\bert_banking77",
+    "report_path": "C:\\Users\\Ayan\\Documents\\GitHub\\AIML\\finance ticket classifier using transformers (multi head)\\reports\\bert_v3_evaluation_report.md",
+    "confusion_matrix_png": "C:\\Users\\Ayan\\Documents\\GitHub\\AIML\\finance ticket classifier using transformers (multi head)\\reports\\bert_confusion_matrix.png",
+    "top_confusions_csv": "C:\\Users\\Ayan\\Documents\\GitHub\\AIML\\finance ticket classifier using transformers (multi head)\\reports\\bert_top_confusions.csv",
+    "difficult_intents_csv": "C:\\Users\\Ayan\\Documents\\GitHub\\AIML\\finance ticket classifier using transformers (multi head)\\reports\\bert_vs_distilbert_difficult_intents.csv"
+  }
+}
