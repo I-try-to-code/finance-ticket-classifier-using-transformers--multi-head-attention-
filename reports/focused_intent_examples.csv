@@ -1,0 +1,86 @@
+focused_intent,priority_tier,comparison_category,sample_id,input_text,true_label,distilbert_prediction,distilbert_confidence,distilbert_correct,bert_prediction,bert_confidence,bert_correct
+virtual_card_not_working,1,both_wrong,1405,Can I use my virtual card to complete transactions for memberships?,virtual_card_not_working,getting_virtual_card,0.8296,False,getting_virtual_card,0.8447,False
+virtual_card_not_working,1,both_wrong,98,What do I have to do to get the virtual card to work?,virtual_card_not_working,getting_virtual_card,0.665,False,getting_virtual_card,0.3792,False
+virtual_card_not_working,1,both_wrong,207,I can't use my virtual disposable card,virtual_card_not_working,get_disposable_virtual_card,0.5801,False,get_disposable_virtual_card,0.3059,False
+virtual_card_not_working,1,both_wrong,498,Help me get the virtual card working.,virtual_card_not_working,getting_virtual_card,0.5767,False,getting_virtual_card,0.5181,False
+virtual_card_not_working,2,distilbert_wrong_bert_correct,231,I can't make purchases with my virtual card.,virtual_card_not_working,getting_virtual_card,0.6797,False,virtual_card_not_working,0.4641,True
+virtual_card_not_working,2,distilbert_wrong_bert_correct,1175,i cannot get virtual card to work,virtual_card_not_working,getting_virtual_card,0.4763,False,virtual_card_not_working,0.5059,True
+virtual_card_not_working,2,distilbert_wrong_bert_correct,454,I can't get the virtual card to work,virtual_card_not_working,getting_virtual_card,0.3748,False,virtual_card_not_working,0.5293,True
+virtual_card_not_working,4,both_correct,1704,I tried paying with my disposable virtual card earlier but it was rejected. What can I do to fix this?,virtual_card_not_working,virtual_card_not_working,0.4021,True,virtual_card_not_working,0.2681,True
+getting_virtual_card,1,both_wrong,678,Is there an alternative to a physical card?,getting_virtual_card,order_physical_card,0.8804,False,order_physical_card,0.8511,False
+getting_virtual_card,4,both_correct,78,Where can virtual cards be ordered?,getting_virtual_card,getting_virtual_card,0.8096,True,getting_virtual_card,0.8477,True
+getting_virtual_card,4,both_correct,112,What do I have to do to get my virtual card?,getting_virtual_card,getting_virtual_card,0.8389,True,getting_virtual_card,0.8701,True
+getting_virtual_card,4,both_correct,257,I've got to have one of those virtual cards.,getting_virtual_card,getting_virtual_card,0.8096,True,getting_virtual_card,0.8618,True
+getting_virtual_card,4,both_correct,476,How do I go about getting a virtual card?,getting_virtual_card,getting_virtual_card,0.8535,True,getting_virtual_card,0.8691,True
+getting_virtual_card,4,both_correct,806,How to receive virtual card?,getting_virtual_card,getting_virtual_card,0.8589,True,getting_virtual_card,0.8657,True
+getting_virtual_card,4,both_correct,840,How do I go about getting hold of a virtual card?,getting_virtual_card,getting_virtual_card,0.8267,True,getting_virtual_card,0.8706,True
+getting_virtual_card,4,both_correct,866,How do I get to the virtual cards?,getting_virtual_card,getting_virtual_card,0.8018,True,getting_virtual_card,0.8628,True
+getting_virtual_card,4,both_correct,897,What is the virtual card and how can i get one?,getting_virtual_card,getting_virtual_card,0.8423,True,getting_virtual_card,0.8657,True
+getting_virtual_card,4,both_correct,906,Are there virtual cards,getting_virtual_card,getting_virtual_card,0.771,True,getting_virtual_card,0.856,True
+why_verify_identity,1,both_wrong,701,I'm not verifying my identity.,why_verify_identity,unable_to_verify_identity,0.7383,False,unable_to_verify_identity,0.7012,False
+why_verify_identity,1,both_wrong,1269,I refuse to verify my identity.,why_verify_identity,unable_to_verify_identity,0.5186,False,unable_to_verify_identity,0.7192,False
+why_verify_identity,1,both_wrong,240,How does identity check work?,why_verify_identity,verify_my_identity,0.4656,False,verify_my_identity,0.626,False
+why_verify_identity,1,both_wrong,237,What is the purpose for verifying my identity?,why_verify_identity,verify_my_identity,0.5625,False,verify_my_identity,0.6011,False
+why_verify_identity,1,both_wrong,1155,which identity details are required,why_verify_identity,verify_my_identity,0.4263,False,verify_my_identity,0.5225,False
+why_verify_identity,1,both_wrong,634,What is the first step I need to make for being able to access my account?,why_verify_identity,terminate_account,0.4453,False,terminate_account,0.377,False
+why_verify_identity,2,distilbert_wrong_bert_correct,1637,Do you need to know my first and last name?,why_verify_identity,edit_personal_details,0.7686,False,why_verify_identity,0.3918,True
+why_verify_identity,2,distilbert_wrong_bert_correct,266,I do not feel comfortable verifying my identity.,why_verify_identity,unable_to_verify_identity,0.5391,False,why_verify_identity,0.4524,True
+why_verify_identity,2,distilbert_wrong_bert_correct,497,Why do you need me to verify who I am?,why_verify_identity,unable_to_verify_identity,0.4395,False,why_verify_identity,0.4817,True
+why_verify_identity,2,distilbert_wrong_bert_correct,1037,Why do you need my name and ID,why_verify_identity,verify_my_identity,0.4102,False,why_verify_identity,0.6353,True
+unable_to_verify_identity,1,both_wrong,734,What do I need to bring for identification?,unable_to_verify_identity,verify_my_identity,0.7041,False,verify_my_identity,0.6504,False
+unable_to_verify_identity,1,both_wrong,894,I need help verifying my identity.,unable_to_verify_identity,why_verify_identity,0.4338,False,verify_my_identity,0.5088,False
+unable_to_verify_identity,3,bert_wrong_distilbert_correct,95,I need help proving that this is really me and to verify my identity.,unable_to_verify_identity,unable_to_verify_identity,0.3936,True,why_verify_identity,0.3196,False
+unable_to_verify_identity,4,both_correct,216,Why am I unable verify my id?,unable_to_verify_identity,unable_to_verify_identity,0.7515,True,unable_to_verify_identity,0.7798,True
+unable_to_verify_identity,4,both_correct,279,Why am I unable to verify my id?,unable_to_verify_identity,unable_to_verify_identity,0.7397,True,unable_to_verify_identity,0.7798,True
+unable_to_verify_identity,4,both_correct,545,I am not able to verify my id. Why?,unable_to_verify_identity,unable_to_verify_identity,0.7803,True,unable_to_verify_identity,0.752,True
+unable_to_verify_identity,4,both_correct,586,My identity verification didn't work,unable_to_verify_identity,unable_to_verify_identity,0.5635,True,unable_to_verify_identity,0.7051,True
+unable_to_verify_identity,4,both_correct,745,I'm having trouble with proving my identity.,unable_to_verify_identity,unable_to_verify_identity,0.8154,True,unable_to_verify_identity,0.7729,True
+unable_to_verify_identity,4,both_correct,757,"My identity isn't being accepted, what should I do?",unable_to_verify_identity,unable_to_verify_identity,0.6167,True,unable_to_verify_identity,0.3782,True
+unable_to_verify_identity,4,both_correct,1112,Why am I not allowed to verify my id?,unable_to_verify_identity,unable_to_verify_identity,0.6616,True,unable_to_verify_identity,0.7651,True
+verify_my_identity,1,both_wrong,435,How do I prove I am who I am?,verify_my_identity,unable_to_verify_identity,0.4771,False,why_verify_identity,0.3386,False
+verify_my_identity,1,both_wrong,1376,How can I prove who I am?,verify_my_identity,unable_to_verify_identity,0.3767,False,why_verify_identity,0.3521,False
+verify_my_identity,2,distilbert_wrong_bert_correct,1577,"I was told to verify my identity, how do I do that?",verify_my_identity,why_verify_identity,0.5312,False,verify_my_identity,0.603,True
+verify_my_identity,4,both_correct,43,How do you check my identity?,verify_my_identity,verify_my_identity,0.5391,True,verify_my_identity,0.5029,True
+verify_my_identity,4,both_correct,77,How do I complete the ID check?,verify_my_identity,verify_my_identity,0.4736,True,verify_my_identity,0.5698,True
+verify_my_identity,4,both_correct,102,Where can I verify my identity?,verify_my_identity,verify_my_identity,0.7822,True,verify_my_identity,0.6426,True
+verify_my_identity,4,both_correct,109,with what can I verify my identity?,verify_my_identity,verify_my_identity,0.8062,True,verify_my_identity,0.6763,True
+verify_my_identity,4,both_correct,317,Where do I go to fill out the identity form?,verify_my_identity,verify_my_identity,0.6357,True,verify_my_identity,0.5767,True
+verify_my_identity,4,both_correct,399,What am I going to need in order to verify my identity?,verify_my_identity,verify_my_identity,0.6909,True,verify_my_identity,0.687,True
+verify_my_identity,4,both_correct,524,What documentation do you accept for the identity check?,verify_my_identity,verify_my_identity,0.8091,True,verify_my_identity,0.6826,True
+exchange_rate,1,both_wrong,1385,Is there a specific source that the exchange rate for the transfer I'm planning on making is pulled from?,exchange_rate,card_payment_wrong_exchange_rate,0.6943,False,card_payment_wrong_exchange_rate,0.4087,False
+exchange_rate,4,both_correct,16,What are the exchange rates you assign?,exchange_rate,exchange_rate,0.9351,True,exchange_rate,0.9199,True
+exchange_rate,4,both_correct,42,Where are you getting your exchange rates from?,exchange_rate,exchange_rate,0.9351,True,exchange_rate,0.9199,True
+exchange_rate,4,both_correct,113,Please explain the exchange rates.,exchange_rate,exchange_rate,0.9341,True,exchange_rate,0.9111,True
+exchange_rate,4,both_correct,246,What factors determine your exchange rate?,exchange_rate,exchange_rate,0.9385,True,exchange_rate,0.9233,True
+exchange_rate,4,both_correct,296,Do you have the best exchange rate?,exchange_rate,exchange_rate,0.9248,True,exchange_rate,0.9053,True
+exchange_rate,4,both_correct,362,What factors effect the exchange rate?,exchange_rate,exchange_rate,0.936,True,exchange_rate,0.9209,True
+exchange_rate,4,both_correct,411,What is the source of your exchange rates?,exchange_rate,exchange_rate,0.937,True,exchange_rate,0.9175,True
+exchange_rate,4,both_correct,418,Is the exchange rate the same on weekends as the weekdays?,exchange_rate,exchange_rate,0.4216,True,exchange_rate,0.4656,True
+exchange_rate,4,both_correct,661,What will my exchange rate be?,exchange_rate,exchange_rate,0.9341,True,exchange_rate,0.9199,True
+card_payment_wrong_exchange_rate,1,both_wrong,1517,I believe you charged me too much to exchange my money,card_payment_wrong_exchange_rate,exchange_charge,0.666,False,exchange_charge,0.667,False
+card_payment_wrong_exchange_rate,1,both_wrong,1438,"When I was traveling abroad, the exchange rate was applied wrong.",card_payment_wrong_exchange_rate,wrong_exchange_rate_for_cash_withdrawal,0.4863,False,wrong_exchange_rate_for_cash_withdrawal,0.491,False
+card_payment_wrong_exchange_rate,1,both_wrong,227,I am being charged the wrong amount on my card.,card_payment_wrong_exchange_rate,extra_charge_on_statement,0.3755,False,transaction_charged_twice,0.3435,False
+card_payment_wrong_exchange_rate,2,distilbert_wrong_bert_correct,412,I think the currency exchange that's been applied is wrong.,card_payment_wrong_exchange_rate,wrong_exchange_rate_for_cash_withdrawal,0.5479,False,card_payment_wrong_exchange_rate,0.6528,True
+card_payment_wrong_exchange_rate,3,bert_wrong_distilbert_correct,1843,I checked on google and the exchange rate you are using is really bad. Can you update it?,card_payment_wrong_exchange_rate,card_payment_wrong_exchange_rate,0.6382,True,apple_pay_or_google_pay,0.387,False
+card_payment_wrong_exchange_rate,4,both_correct,45,I recently bought something abroad but the exchange rate is incorrect. Why?,card_payment_wrong_exchange_rate,card_payment_wrong_exchange_rate,0.8857,True,card_payment_wrong_exchange_rate,0.8081,True
+card_payment_wrong_exchange_rate,4,both_correct,82,The exchange rate for my electronic payment is incorrect.,card_payment_wrong_exchange_rate,card_payment_wrong_exchange_rate,0.8618,True,card_payment_wrong_exchange_rate,0.812,True
+card_payment_wrong_exchange_rate,4,both_correct,125,I purchased an item and the exchange rate was wrong,card_payment_wrong_exchange_rate,card_payment_wrong_exchange_rate,0.9282,True,card_payment_wrong_exchange_rate,0.8374,True
+card_payment_wrong_exchange_rate,4,both_correct,175,I bought something in another country but the exchange rate is wrong,card_payment_wrong_exchange_rate,card_payment_wrong_exchange_rate,0.8633,True,card_payment_wrong_exchange_rate,0.8164,True
+card_payment_wrong_exchange_rate,4,both_correct,251,I don't think the charges made when I had currency exchanged are right.,card_payment_wrong_exchange_rate,card_payment_wrong_exchange_rate,0.3755,True,card_payment_wrong_exchange_rate,0.4976,True
+card_not_working,1,both_wrong,944,When I was in a restaurant today my card was declined and payment wouldn't go through and I need help. Can you fix this?,card_not_working,declined_card_payment,0.915,False,declined_card_payment,0.8857,False
+card_not_working,1,both_wrong,1107,Can I use app to reset PIN attempts?,card_not_working,pin_blocked,0.895,False,pin_blocked,0.9053,False
+card_not_working,1,both_wrong,1454,Today I was out eating and my card was declined. Why's that?,card_not_working,declined_card_payment,0.8457,False,declined_card_payment,0.7388,False
+card_not_working,1,both_wrong,1846,How do I check security settings using the app?,card_not_working,lost_or_stolen_phone,0.4314,False,lost_or_stolen_phone,0.1556,False
+card_not_working,4,both_correct,40,I seem to be unable to make any transactions.,card_not_working,card_not_working,0.3574,True,card_not_working,0.6494,True
+card_not_working,4,both_correct,46,What do I do if my card gets broken?,card_not_working,card_not_working,0.8491,True,card_not_working,0.8491,True
+card_not_working,4,both_correct,114,What should I do if my physical card isn't working?,card_not_working,card_not_working,0.9014,True,card_not_working,0.8706,True
+card_not_working,4,both_correct,191,Can you tell me whats going on with my card it seems to be not working?,card_not_working,card_not_working,0.8618,True,card_not_working,0.855,True
+card_not_working,4,both_correct,247,I think my card is broke it's not working anymore,card_not_working,card_not_working,0.8423,True,card_not_working,0.8716,True
+card_not_working,4,both_correct,311,Please help me!  My physical card isn't working right.,card_not_working,card_not_working,0.9014,True,card_not_working,0.8643,True
+contactless_not_working,1,both_wrong,1694,Should i uninstall the app before i try it again?,contactless_not_working,card_linking,0.4487,False,lost_or_stolen_phone,0.1373,False
+contactless_not_working,1,both_wrong,1563,Any charges applicable for new card?,contactless_not_working,getting_spare_card,0.2678,False,order_physical_card,0.3357,False
+contactless_not_working,1,both_wrong,1873,how to get new card?,contactless_not_working,card_about_to_expire,0.2688,False,order_physical_card,0.3342,False
+contactless_not_working,4,both_correct,568,What do I have to do to get the contactless to work?,contactless_not_working,contactless_not_working,0.6025,True,contactless_not_working,0.5664,True
+contactless_not_working,4,both_correct,1290,I've tried using my contactless in several locations today and it's not working anywhere. It seemed fine before. How do I get it to work again?,contactless_not_working,contactless_not_working,0.623,True,contactless_not_working,0.5522,True
+contactless_not_working,4,both_correct,1471,How do I troubleshoot when contactless doesn't work?,contactless_not_working,contactless_not_working,0.6182,True,contactless_not_working,0.5669,True
+contactless_not_working,4,both_correct,1954,I'm confused. My contactless is suddenly not working anywhere that I try to use it. How do I fix it?,contactless_not_working,contactless_not_working,0.6274,True,contactless_not_working,0.5596,True

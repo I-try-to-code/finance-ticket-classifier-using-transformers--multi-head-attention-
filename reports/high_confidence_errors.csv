@@ -1,0 +1,81 @@
+model_name,sample_id,text,true_intent,predicted_intent,confidence,second_intent,second_prob,margin
+DistilBERT,1738,"|I moved out of my old house two weeks ago and cancelled my direct debit to my old landlord, this direct debit was working fine.  Now I've moved in to a new place and set up a transfer to a new landlord but it's not reached her yet, can you check it please?",transfer_not_received_by_recipient,direct_debit_payment_not_recognised,0.9302,balance_not_updated_after_bank_transfer,0.0057,0.9244
+DistilBERT,111,The card payment didn't work,reverted_card_payment?,declined_card_payment,0.9165,card_not_working,0.0161,0.9004
+DistilBERT,944,When I was in a restaurant today my card was declined and payment wouldn't go through and I need help. Can you fix this?,card_not_working,declined_card_payment,0.915,card_not_working,0.0215,0.8936
+DistilBERT,851,"I would like to re-activate my card, it was previously reported  lost but I found it this morning.",card_linking,activate_my_card,0.9092,card_linking,0.0306,0.8786
+DistilBERT,892,You can use it anywhere that accepts Mastercard.,card_acceptance,visa_or_mastercard,0.9053,card_acceptance,0.0315,0.8738
+DistilBERT,1107,Can I use app to reset PIN attempts?,card_not_working,pin_blocked,0.895,change_pin,0.0238,0.8712
+DistilBERT,678,Is there an alternative to a physical card?,getting_virtual_card,order_physical_card,0.8804,card_acceptance,0.0345,0.8458
+DistilBERT,170,I just got my card and cannot get it to work.,activate_my_card,card_not_working,0.875,declined_card_payment,0.0327,0.8423
+DistilBERT,1384,Why is the transaction not posting?,pending_transfer,transfer_not_received_by_recipient,0.8706,pending_transfer,0.0208,0.8498
+DistilBERT,1975,My cash withdrawal was not entirely complete,wrong_amount_of_cash_received,pending_cash_withdrawal,0.8691,cash_withdrawal_not_recognised,0.0355,0.8336
+DistilBERT,1527,can i get a virtual card online,get_disposable_virtual_card,getting_virtual_card,0.8687,virtual_card_not_working,0.037,0.8316
+DistilBERT,357,Which currencies do you handle?,supported_cards_and_currencies,fiat_currency_support,0.8677,supported_cards_and_currencies,0.0625,0.8052
+DistilBERT,1978,I was spending cash with my card and got a fee.,card_payment_fee_charged,cash_withdrawal_charge,0.8633,card_payment_fee_charged,0.0797,0.7836
+DistilBERT,495,"I would like to make a purchase, however my card has been declined. I would like to ask the reason for this. The past two weeks, the card has been working fine.",reverted_card_payment?,declined_card_payment,0.8613,top_up_failed,0.0199,0.8414
+DistilBERT,1374,Why was my top-up declined?,top_up_reverted,top_up_failed,0.8574,top_up_reverted,0.0743,0.7831
+DistilBERT,1454,Today I was out eating and my card was declined. Why's that?,card_not_working,declined_card_payment,0.8457,card_not_working,0.0538,0.7919
+DistilBERT,1925,Which currencies do you work with?,supported_cards_and_currencies,fiat_currency_support,0.8433,supported_cards_and_currencies,0.0628,0.7805
+DistilBERT,1111,Is my card actually working? It's the first time I tried using it,declined_cash_withdrawal,card_not_working,0.8398,card_linking,0.032,0.8079
+DistilBERT,429,Where can I use a disposable card?,disposable_card_limits,get_disposable_virtual_card,0.8379,disposable_card_limits,0.082,0.7559
+DistilBERT,577,I need my refund,Refund_not_showing_up,request_refund,0.832,Refund_not_showing_up,0.1364,0.6957
+DistilBERT,1405,Can I use my virtual card to complete transactions for memberships?,virtual_card_not_working,getting_virtual_card,0.8296,virtual_card_not_working,0.0612,0.7684
+DistilBERT,1830,The amount of cash I requested to withdrawal did not match what I received when exchanged,wrong_exchange_rate_for_cash_withdrawal,wrong_amount_of_cash_received,0.8276,wrong_exchange_rate_for_cash_withdrawal,0.1055,0.7222
+DistilBERT,130,What currencies can I use to top up my account?,transfer_into_account,supported_cards_and_currencies,0.8271,top_up_by_cash_or_cheque,0.0529,0.7742
+DistilBERT,746,"I tried to top up, but it didn't finish.",pending_top_up,top_up_failed,0.8271,top_up_reverted,0.0591,0.768
+DistilBERT,323,I have a strange transaction on my account which appears to pertain to a cash withdrawal I made outside Nandos in Leeds.  What is that for?  Is it fraud?,cash_withdrawal_charge,cash_withdrawal_not_recognised,0.8252,direct_debit_payment_not_recognised,0.0291,0.7961
+DistilBERT,1304,I did all that was asked of me and I am rather frustrated. I don't understand why you just won't credit me my money back. I have contacted the seller and nothing has been done. It's been a week!,Refund_not_showing_up,reverted_card_payment?,0.8042,Refund_not_showing_up,0.0472,0.757
+DistilBERT,542,what is this charge i didnt do it what can i do,direct_debit_payment_not_recognised,card_payment_not_recognised,0.8018,direct_debit_payment_not_recognised,0.0764,0.7254
+DistilBERT,768,I'm worried my card might be lost in the mail? How long does it usually take to arrive?,card_delivery_estimate,card_arrival,0.7969,card_delivery_estimate,0.1134,0.6835
+DistilBERT,1646,My card didn't go through.  It doesn't make sense.  You told me that everything was ok.,declined_card_payment,card_not_working,0.793,declined_card_payment,0.0663,0.7266
+DistilBERT,1215,i need to trace a deposit,verify_source_of_funds,balance_not_updated_after_cheque_or_cash_deposit,0.7856,top_up_by_cash_or_cheque,0.0654,0.7203
+DistilBERT,1025,How long will it take to have my card mailed to me?,card_delivery_estimate,card_arrival,0.7827,card_delivery_estimate,0.1256,0.6571
+DistilBERT,796,What are the rules for using disposable virtual cards?,disposable_card_limits,get_disposable_virtual_card,0.7734,disposable_card_limits,0.1556,0.6178
+DistilBERT,1867,why do you charge for transfers?,top_up_by_bank_transfer_charge,transfer_fee_charged,0.7705,top_up_by_bank_transfer_charge,0.166,0.6045
+DistilBERT,1602,"Although I transferred some money, it has not as of yet, arrived.",balance_not_updated_after_bank_transfer,transfer_not_received_by_recipient,0.77,balance_not_updated_after_bank_transfer,0.1307,0.6393
+DistilBERT,1637,Do you need to know my first and last name?,why_verify_identity,edit_personal_details,0.7686,why_verify_identity,0.0423,0.7263
+DistilBERT,1904,My cards were stolen,lost_or_stolen_phone,lost_or_stolen_card,0.7686,compromised_card,0.0288,0.7398
+DistilBERT,80,I need my refund as soon as possible. What else do I have to do?,Refund_not_showing_up,request_refund,0.7676,Refund_not_showing_up,0.1957,0.5719
+DistilBERT,220,What is not accepted in order for me to top up my account?,top_up_by_cash_or_cheque,topping_up_by_card,0.7598,top_up_failed,0.0692,0.6906
+BERT-base,1738,"|I moved out of my old house two weeks ago and cancelled my direct debit to my old landlord, this direct debit was working fine.  Now I've moved in to a new place and set up a transfer to a new landlord but it's not reached her yet, can you check it please?",transfer_not_received_by_recipient,direct_debit_payment_not_recognised,0.9497,cancel_transfer,0.0045,0.9452
+BERT-base,1867,why do you charge for transfers?,top_up_by_bank_transfer_charge,transfer_fee_charged,0.9268,top_up_by_bank_transfer_charge,0.0237,0.9031
+BERT-base,323,I have a strange transaction on my account which appears to pertain to a cash withdrawal I made outside Nandos in Leeds.  What is that for?  Is it fraud?,cash_withdrawal_charge,cash_withdrawal_not_recognised,0.9175,compromised_card,0.0075,0.91
+BERT-base,851,"I would like to re-activate my card, it was previously reported  lost but I found it this morning.",card_linking,activate_my_card,0.916,card_linking,0.0225,0.8935
+BERT-base,1107,Can I use app to reset PIN attempts?,card_not_working,pin_blocked,0.9053,change_pin,0.0181,0.8872
+BERT-base,577,I need my refund,Refund_not_showing_up,request_refund,0.9014,Refund_not_showing_up,0.0454,0.856
+BERT-base,111,The card payment didn't work,reverted_card_payment?,declined_card_payment,0.895,reverted_card_payment?,0.0266,0.8685
+BERT-base,944,When I was in a restaurant today my card was declined and payment wouldn't go through and I need help. Can you fix this?,card_not_working,declined_card_payment,0.8857,card_not_working,0.0184,0.8674
+BERT-base,495,"I would like to make a purchase, however my card has been declined. I would like to ask the reason for this. The past two weeks, the card has been working fine.",reverted_card_payment?,declined_card_payment,0.8672,reverted_card_payment?,0.0245,0.8427
+BERT-base,1527,can i get a virtual card online,get_disposable_virtual_card,getting_virtual_card,0.8618,visa_or_mastercard,0.0125,0.8493
+BERT-base,1978,I was spending cash with my card and got a fee.,card_payment_fee_charged,cash_withdrawal_charge,0.856,card_payment_fee_charged,0.0656,0.7904
+BERT-base,678,Is there an alternative to a physical card?,getting_virtual_card,order_physical_card,0.8511,card_acceptance,0.0283,0.8228
+BERT-base,130,What currencies can I use to top up my account?,transfer_into_account,supported_cards_and_currencies,0.8491,transfer_into_account,0.0194,0.8297
+BERT-base,170,I just got my card and cannot get it to work.,activate_my_card,card_not_working,0.8477,declined_card_payment,0.0288,0.8189
+BERT-base,1405,Can I use my virtual card to complete transactions for memberships?,virtual_card_not_working,getting_virtual_card,0.8447,get_disposable_virtual_card,0.0149,0.8298
+BERT-base,104,What is the procedure for depositing a virtual card,get_disposable_virtual_card,getting_virtual_card,0.8428,visa_or_mastercard,0.0163,0.8264
+BERT-base,689,I made a transfer recently but it has not changed on my dashboard.,pending_transfer,balance_not_updated_after_bank_transfer,0.8413,transfer_not_received_by_recipient,0.0415,0.7998
+BERT-base,1450,I entered the correct pin but I still couldnt get funds.,declined_cash_withdrawal,pin_blocked,0.8374,declined_cash_withdrawal,0.0206,0.8168
+BERT-base,1458,How long does it take to get a refund on something I bought?,request_refund,Refund_not_showing_up,0.8374,request_refund,0.1069,0.7305
+BERT-base,136,A random charge got added to my card,card_payment_not_recognised,card_payment_fee_charged,0.8359,transfer_fee_charged,0.0361,0.7998
+BERT-base,357,Which currencies do you handle?,supported_cards_and_currencies,fiat_currency_support,0.8354,exchange_via_app,0.037,0.7984
+BERT-base,1830,The amount of cash I requested to withdrawal did not match what I received when exchanged,wrong_exchange_rate_for_cash_withdrawal,wrong_amount_of_cash_received,0.832,wrong_exchange_rate_for_cash_withdrawal,0.0575,0.7745
+BERT-base,429,Where can I use a disposable card?,disposable_card_limits,get_disposable_virtual_card,0.8286,disposable_card_limits,0.054,0.7746
+BERT-base,1111,Is my card actually working? It's the first time I tried using it,declined_cash_withdrawal,card_not_working,0.8267,activate_my_card,0.0285,0.7981
+BERT-base,1925,Which currencies do you work with?,supported_cards_and_currencies,fiat_currency_support,0.8154,exchange_via_app,0.0466,0.7688
+BERT-base,641,My accounts been charged a payment for something I didn't make.,direct_debit_payment_not_recognised,card_payment_not_recognised,0.814,direct_debit_payment_not_recognised,0.0493,0.7646
+BERT-base,1975,My cash withdrawal was not entirely complete,wrong_amount_of_cash_received,pending_cash_withdrawal,0.8081,wrong_amount_of_cash_received,0.0592,0.7489
+BERT-base,1384,Why is the transaction not posting?,pending_transfer,transfer_not_received_by_recipient,0.8076,pending_transfer,0.0493,0.7584
+BERT-base,1082,"Hi, during online shopping payment is getting declined yesterday and today as well. Please check the issue.",declined_transfer,declined_card_payment,0.8042,declined_transfer,0.0452,0.759
+BERT-base,1663,"Hello, my transfers are getting failed continuously, in spite of the fact that all the recipient details are correct. Please advise.",declined_transfer,failed_transfer,0.8027,declined_transfer,0.0581,0.7446
+BERT-base,1620,I have an unknown charge.,direct_debit_payment_not_recognised,card_payment_not_recognised,0.7949,direct_debit_payment_not_recognised,0.0568,0.7381
+BERT-base,1070,Why didnt my top up go through,top_up_reverted,top_up_failed,0.7925,pending_top_up,0.0928,0.6996
+BERT-base,198,What is the time for a transfer?,transfer_not_received_by_recipient,transfer_timing,0.7896,balance_not_updated_after_bank_transfer,0.0369,0.7526
+BERT-base,1374,Why was my top-up declined?,top_up_reverted,top_up_failed,0.7852,top_up_reverted,0.1035,0.6817
+BERT-base,1163,"I am seeing unathorized transactions in the app, on my account.",cash_withdrawal_not_recognised,transaction_charged_twice,0.7842,compromised_card,0.0345,0.7497
+BERT-base,220,What is not accepted in order for me to top up my account?,top_up_by_cash_or_cheque,topping_up_by_card,0.7769,pending_top_up,0.0311,0.7458
+BERT-base,1170,I am wondering about a transfer from a different country that doesn't show up yet?,balance_not_updated_after_bank_transfer,transfer_timing,0.7759,balance_not_updated_after_bank_transfer,0.0756,0.7003
+BERT-base,1765,"I'm having issues with my card. You guys keep declining it for some reason. I haven't had any issues up until this point. What is going on? I've tried a handful of times with the same, unfortunate, result!",declined_transfer,declined_card_payment,0.7754,card_not_working,0.0482,0.7272
+BERT-base,1304,I did all that was asked of me and I am rather frustrated. I don't understand why you just won't credit me my money back. I have contacted the seller and nothing has been done. It's been a week!,Refund_not_showing_up,reverted_card_payment?,0.7734,declined_card_payment,0.0953,0.6781
+BERT-base,1565,pending transaction?,pending_card_payment,pending_transfer,0.7681,pending_card_payment,0.0914,0.6767
+BERT-base,230,How do I top up?,transfer_into_account,topping_up_by_card,0.7671,pending_top_up,0.0318,0.7353
+BERT-base,1633,I am 16 and just started working at McDonalds can I deposit my checks at your bank?,age_limit,top_up_by_cash_or_cheque,0.7637,balance_not_updated_after_cheque_or_cash_deposit,0.052,0.7117
