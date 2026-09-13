@@ -4,12 +4,17 @@ from contextlib import asynccontextmanager
 import logging
 from typing import AsyncGenerator
 from fastapi import FastAPI, HTTPException, Request, status
-from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 import torch
 
 from src.api.config import settings
 from src.api.schemas import HealthResponse, PredictRequest, PredictResponse, TopPrediction
+from src.config import PROJECT_ROOT
 from src.inference import Banking77Predictor
+
+FRONTEND_DIR = PROJECT_ROOT / "frontend"
 
 logger = logging.getLogger("banking77_api")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -46,12 +51,21 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 
 
 def create_app() -> FastAPI:
-    """Create and configure the FastAPI application instance."""
+    """Create and configure the FastAPI application instance with CORS and static UI hosting."""
     app = FastAPI(
         title=settings.api_title,
         version=settings.api_version,
         description=settings.api_description,
         lifespan=lifespan,
+    )
+
+    # Enable CORS for frontend flexibility
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
     )
 
     @app.get(
@@ -110,20 +124,35 @@ def create_app() -> FastAPI:
         )
 
     @app.get(
-        "/",
-        summary="Root Status",
+        "/api",
+        summary="API Info",
         include_in_schema=False,
     )
-    async def root():
-        """Root endpoint redirecting users to interactive Swagger documentation."""
+    async def api_info():
+        """API metadata endpoint."""
         return JSONResponse(
             content={
-                "message": "Welcome to Banking77 Intent Classification API",
+                "message": "Banking77 Intent Classification API",
                 "docs_url": "/docs",
                 "health_url": "/health",
                 "predict_url": "/predict",
             }
         )
+
+    # Mount frontend static files if directory exists
+    if FRONTEND_DIR.exists():
+        app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
+    else:
+        @app.get("/", include_in_schema=False)
+        async def root_fallback():
+            return JSONResponse(
+                content={
+                    "message": "Welcome to Banking77 Intent Classification API",
+                    "docs_url": "/docs",
+                    "health_url": "/health",
+                    "predict_url": "/predict",
+                }
+            )
 
     return app
 

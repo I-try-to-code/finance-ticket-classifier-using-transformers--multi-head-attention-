@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking77 Intent Classifier | Transformer Inference System</title>
+    <meta name="description" content="Production-ready banking customer support intent classification system powered by fine-tuned DistilBERT on Banking77.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="app-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="brand-badge">
+                    <div class="brand-icon">B77</div>
+                    <div class="brand-text">
+                        <h1>Banking77 Intent Intelligence</h1>
+                        <p>Transformer-Powered Ticket Classifier</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div id="health-badge" class="health-badge connecting" title="Backend service health">
+                        <span class="status-dot"></span>
+                        <span id="health-status-text">Connecting...</span>
+                    </div>
+                    <button id="btn-settings" class="btn-icon" title="Configure API Endpoint" aria-label="Settings">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </button>
+                    <a id="api-docs-link" href="/docs" target="_blank" class="btn-icon" title="Open FastAPI Interactive Swagger Docs" aria-label="API Documentation">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-pill">Fine-Tuned DistilBERT V2 &bull; 77 Intent Classes</div>
+            <h2 class="hero-title">Real-Time Banking Intent Inference</h2>
+            <p class="hero-subtitle">Input customer queries below to route support tickets, detect customer sentiment issues, and analyze multi-class transformer confidence scores.</p>
+        </section>
+
+        <!-- System Alerts -->
+        <div id="system-alert" class="alert-box alert-error" role="alert">
+            <span id="alert-message">Error message</span>
+        </div>
+
+        <!-- Interactive Layout Grid -->
+        <div class="main-grid">
+            <!-- Left Column: Input Form -->
+            <section class="card input-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        Customer Support Query
+                    </h2>
+                </div>
+
+                <form id="prediction-form" onsubmit="return false;">
+                    <div class="input-group">
+                        <textarea 
+                            id="query-input" 
+                            class="query-textarea" 
+                            rows="5" 
+                            maxlength="1000"
+                            placeholder="Enter a customer ticket or inquiry (e.g., 'My transfer is still pending and hasn't arrived yet')..."
+                            aria-label="Customer banking support query"
+                            required
+                        ></textarea>
+                        <div class="textarea-footer">
+                            <span id="char-counter" class="char-counter">0 / 1000 characters</span>
+                            <button type="button" id="btn-clear" class="btn-clear">Clear Input</button>
+                        </div>
+                    </div>
+
+                    <div class="action-row">
+                        <span class="form-hint" style="font-size: 12px; color: var(--text-muted);">Tip: Press <kbd style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 11px;">Ctrl + Enter</kbd> to submit</span>
+                        <button type="submit" id="btn-submit" class="btn-primary">
+                            <span class="spinner" aria-hidden="true"></span>
+                            <span class="btn-text">Classify Intent</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Example Queries Section -->
+                <div class="examples-section">
+                    <span class="examples-label">Try Example Banking Inquiries:</span>
+                    <div class="example-chips">
+                        <button type="button" class="chip-btn" data-query="Why do I need to verify my identity?">
+                            Why do I need to verify my identity?
+                        </button>
+                        <button type="button" class="chip-btn" data-query="My transfer is still pending">
+                            My transfer is still pending
+                        </button>
+                        <button type="button" class="chip-btn" data-query="I cannot use my virtual card">
+                            I cannot use my virtual card
+                        </button>
+                        <button type="button" class="chip-btn" data-query="How long will an international transfer take?">
+                            How long will an international transfer take?
+                        </button>
+                        <button type="button" class="chip-btn" data-query="My card payment was reversed">
+                            My card payment was reversed
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Prediction Results -->
+            <section class="card results-card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        Inference Output
+                    </h2>
+                    <span id="latency-badge" class="latency-badge" style="display: none;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span id="latency-value">0.00 ms</span>
+                    </span>
+                </div>
+
+                <!-- Empty State Placeholder -->
+                <div id="empty-state" class="empty-state">
+                    <div class="empty-state-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Awaiting Query</h3>
+                    <p>Enter a banking support question or click an example above to trigger real-time transformer inference.</p>
+                </div>
+
+                <!-- Active Prediction View -->
+                <div id="prediction-container" class="prediction-container">
+                    <!-- Primary Top-1 Prediction -->
+                    <div class="primary-intent-box">
+                        <div class="primary-intent-label">Predicted Intent</div>
+                        <div id="predicted-intent-name" class="intent-tag">--</div>
+                        <div class="confidence-row">
+                            <span id="predicted-confidence" class="confidence-score">0.0%</span>
+                            <span class="confidence-caption">Classification Confidence</span>
+                        </div>
+                    </div>
+
+                    <!-- Top 3 Probability Breakdown -->
+                    <div>
+                        <div class="candidates-title">Top-3 Ranked Candidates</div>
+                        <div id="candidate-list" class="candidate-list">
+                            <!-- Dynamic Candidate Rows injected here -->
+                        </div>
+                    </div>
+
+                    <!-- Query Echo -->
+                    <div class="query-echo-box">
+                        <div class="query-echo-label">Evaluated Query</div>
+                        <p id="query-echo-text" class="query-echo-text">--</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Technical Model Specifications -->
+        <section class="specs-section">
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-label">Model Checkpoint</div>
+                    <div class="spec-value">DistilBERT V2</div>
+                    <div class="spec-meta">66.4M parameters &bull; 6 layers</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Target Taxonomy</div>
+                    <div class="spec-value">Banking77</div>
+                    <div class="spec-meta">77 fine-grained customer intents</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Validation Benchmark</div>
+                    <div class="spec-value">0.8907 Macro F1</div>
+                    <div class="spec-meta">91.85% Accuracy (8,002 train)</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Inference Engine</div>
+                    <div class="spec-value">FastAPI + Torch</div>
+                    <div class="spec-meta" id="device-meta">Device: Checking...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title">API Server Configuration</h3>
+                <button type="button" id="btn-close-modal" class="btn-clear" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label for="input-api-url" class="form-label">FastAPI Backend Base URL</label>
+                <input type="url" id="input-api-url" class="input-text" placeholder="http://localhost:8000">
+                <p class="form-help">
+                    Specify the origin where your FastAPI server is running. Leave empty to use auto-detection (current origin or <code>http://localhost:8000</code>).
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-reset-api" class="btn-secondary">Reset to Default</button>
+                <button type="button" id="btn-save-api" class="btn-primary">
+                    <span class="btn-text">Save Settings</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Footer -->
+    <footer class="app-footer">
+        <div class="container">
+            <p>Banking77 Intent Classifier &bull; Powered by PyTorch, Hugging Face Transformers &amp; FastAPI</p>
+        </div>
+    </footer>
+
+    <!-- Application JavaScript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>

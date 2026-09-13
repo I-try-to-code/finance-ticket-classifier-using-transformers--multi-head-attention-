@@ -27,13 +27,32 @@ def test_health_endpoint(client: TestClient):
 
 
 def test_root_endpoint(client: TestClient):
-    """Verify root GET / endpoint returns navigation links."""
+    """Verify root GET / endpoint serves the frontend HTML interface."""
     response = client.get("/")
+    assert response.status_code == 200
+    assert "text/html" in response.headers.get("content-type", "")
+    assert "Banking77 Intent Intelligence" in response.text
+
+
+def test_api_info_endpoint(client: TestClient):
+    """Verify GET /api endpoint returns JSON navigation links."""
+    response = client.get("/api")
     assert response.status_code == 200
     data = response.json()
     assert "docs_url" in data
     assert "health_url" in data
     assert "predict_url" in data
+
+
+def test_static_assets_endpoint(client: TestClient):
+    """Verify static assets (style.css, app.js, config.js) are properly delivered."""
+    css_res = client.get("/style.css")
+    assert css_res.status_code == 200
+    assert "css" in css_res.headers.get("content-type", "")
+
+    js_res = client.get("/app.js")
+    assert js_res.status_code == 200
+    assert "javascript" in js_res.headers.get("content-type", "")
 
 
 def test_valid_prediction(client: TestClient):
