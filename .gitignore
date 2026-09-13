@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest & testing caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Large model weight checkpoints (>100MB, excluded from GitHub)
+models/**/*.safetensors
+models/**/*.bin
+models/**/*.pt
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Gemini / agent artifacts
+.agents/
+.system_generated/
+scratch/

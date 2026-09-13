@@ -36,7 +36,36 @@
         inputApiUrl: document.getElementById('input-api-url'),
         btnSaveApi: document.getElementById('btn-save-api'),
         btnResetApi: document.getElementById('btn-reset-api'),
+        // Theme Toggle
+        btnThemeToggle: document.getElementById('btn-theme-toggle'),
+        themeIconSun: document.getElementById('theme-icon-sun'),
+        themeIconMoon: document.getElementById('theme-icon-moon'),
     };
+
+    // Theme Management (Default: Light Mode)
+    function getStoredTheme() {
+        return localStorage.getItem('banking77_theme') || 'light';
+    }
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (elements.themeIconSun && elements.themeIconMoon) {
+            if (theme === 'dark') {
+                elements.themeIconSun.style.display = 'inline-block';
+                elements.themeIconMoon.style.display = 'none';
+            } else {
+                elements.themeIconSun.style.display = 'none';
+                elements.themeIconMoon.style.display = 'inline-block';
+            }
+        }
+    }
+
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        localStorage.setItem('banking77_theme', newTheme);
+        applyTheme(newTheme);
+    }
 
     // Helper: Get active API Base URL
     function getBaseUrl() {
@@ -318,6 +347,11 @@
             });
         });
 
+        // Theme Toggle Event
+        if (elements.btnThemeToggle) {
+            elements.btnThemeToggle.addEventListener('click', toggleTheme);
+        }
+
         // Settings Modal Events
         elements.btnSettings.addEventListener('click', openSettingsModal);
         elements.btnCloseModal.addEventListener('click', closeSettingsModal);
@@ -337,6 +371,7 @@
 
     // Initialize Application
     function init() {
+        applyTheme(getStoredTheme());
         initEvents();
         updateCharCounter();
         checkBackendHealth();
